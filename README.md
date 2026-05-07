@@ -12,6 +12,22 @@ Extract a target sine wave from a noisy mixture of multiple sine waves using thr
 | LSTM  | 0.0568 | 0.1742 | **0.8863** |
 | RNN   | 0.1828 | 0.3373 | 0.6343 |
 
+### Prediction Plots
+
+Each plot shows 6 panels: noisy mixed input, ground truth 10 Hz sine, MLP/RNN/LSTM predictions, and an overlay comparison.
+
+**Sample 0** — ascending sine segment. LSTM tracks ground truth closely; RNN lags in amplitude.
+
+![Sample 0](docs/images/comparison_sample_0.png)
+
+**Sample 1** — full sine arc (peak in the middle). MLP and LSTM follow the shape well; RNN misses the tail.
+
+![Sample 1](docs/images/comparison_sample_1.png)
+
+**Sample 2**
+
+![Sample 2](docs/images/comparison_sample_2.png)
+
 ## Code Quality
 
 | Metric | Value |
