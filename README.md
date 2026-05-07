@@ -1,6 +1,25 @@
-# Sine Wave Extraction System
+# Sine Wave Extraction — Assignment 01
+
+> **Course:** AI Orchestration · SemB 2026 · **Group ID:** `amj-naji`
 
 Extract a target sine wave from a noisy mixture of multiple sine waves using three neural network architectures: MLP, RNN, and LSTM.
+
+## Results Summary
+
+| Model | MSE    | MAE    | R²     |
+|-------|--------|--------|--------|
+| MLP   | 0.0582 | 0.1811 | 0.8836 |
+| LSTM  | 0.0568 | 0.1742 | **0.8863** |
+| RNN   | 0.1828 | 0.3373 | 0.6343 |
+
+## Code Quality
+
+| Metric | Value |
+|--------|-------|
+| Ruff violations | **0** |
+| Test coverage | **86%+** (≥85% required) |
+| Max lines per file | **≤150** |
+| Tests passing | **138 / 138** |
 
 ## Prerequisites
 

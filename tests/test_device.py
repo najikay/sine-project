@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+from unittest.mock import patch
+
 import torch
 
 
@@ -46,3 +48,12 @@ def test_get_device_consistent() -> None:
     d1 = get_device()
     d2 = get_device()
     assert d1.type == d2.type
+
+
+def test_get_device_returns_cuda_when_available() -> None:
+    """get_device() returns cuda when torch.cuda.is_available() is True."""
+    from sine_extraction.device import get_device
+
+    with patch("torch.cuda.is_available", return_value=True):
+        device = get_device()
+    assert device.type == "cuda"

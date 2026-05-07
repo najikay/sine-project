@@ -155,3 +155,30 @@ def test_save_returns_path(
     assert isinstance(result, Path)
     assert result.name == "result.png"
     assert str(vis_config.plots_dir) in str(result)
+
+
+def test_interactive_mode_calls_show(
+    signal_arrays: dict[str, np.ndarray],
+    tmp_path: pytest.TempPathFactory,
+) -> None:
+    """In interactive mode, plt.show() is called after plot()."""
+    from unittest.mock import patch
+
+    import matplotlib
+    matplotlib.use("Agg")
+
+    interactive_cfg = VisualizationConfig(
+        plots_dir=str(tmp_path / "plots_interactive"),
+        interactive=True,
+        num_samples_to_plot=1,
+    )
+    with patch("matplotlib.pyplot.show") as mock_show:
+        plotter = ComparisonPlotter(interactive_cfg)
+        plotter.plot(
+            noisy=signal_arrays["noisy"],
+            pure=signal_arrays["pure"],
+            mlp_pred=signal_arrays["mlp_pred"],
+            rnn_pred=signal_arrays["rnn_pred"],
+            lstm_pred=signal_arrays["lstm_pred"],
+        )
+    mock_show.assert_called_once()

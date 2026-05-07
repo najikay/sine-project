@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import random
+from unittest.mock import patch
 
 import numpy as np
 import pytest
@@ -66,3 +67,14 @@ def test_set_all_seeds_returns_none() -> None:
 
     result = set_all_seeds(0)
     assert result is None
+
+
+def test_set_all_seeds_calls_cuda_seed_when_available() -> None:
+    """set_all_seeds calls cuda.manual_seed_all when CUDA is available."""
+    from sine_extraction.seeding import set_all_seeds
+
+    with patch("torch.cuda.is_available", return_value=True), patch(
+        "torch.cuda.manual_seed_all"
+    ) as mock_cuda_seed:
+        set_all_seeds(123)
+    mock_cuda_seed.assert_called_with(123)
