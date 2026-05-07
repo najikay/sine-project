@@ -1,6 +1,6 @@
 # PRD — LSTM (Long Short-Term Memory)
 ## Project: Sine Wave Extraction System
-### Version: 1.0.0 | Author: najikay | Date: 2026-05-07
+### Version: 1.0.0 | Author: NajAmjad  | Date: 2026-05-07
 
 ---
 
