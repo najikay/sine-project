@@ -23,3 +23,6 @@ artifacts/sweep/*
 # Test coverage
 .coverage
 htmlcov/
+
+# Reference materials
+helper/
