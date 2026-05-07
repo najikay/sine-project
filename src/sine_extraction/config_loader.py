@@ -70,11 +70,13 @@ def _build_model(raw: dict) -> ModelConfig:
         hidden_size=int(rnn_raw["hidden_size"]),
         num_layers=int(rnn_raw["num_layers"]),
         bidirectional=bool(rnn_raw.get("bidirectional", False)),
+        nonlinearity=str(rnn_raw.get("nonlinearity", "relu")),
     )
     lstm = LSTMConfig(
         hidden_size=int(lstm_raw["hidden_size"]),
         num_layers=int(lstm_raw["num_layers"]),
         bidirectional=bool(lstm_raw.get("bidirectional", False)),
+        dropout=float(lstm_raw.get("dropout", 0.2)),
     )
     return ModelConfig(mlp=mlp, rnn=rnn, lstm=lstm)
 

@@ -30,6 +30,7 @@ class LSTMModel(BaseModel):
             num_layers=config.num_layers,
             batch_first=True,
             bidirectional=config.bidirectional,
+            dropout=config.dropout if config.num_layers > 1 else 0.0,
         )
         dirs = 2 if config.bidirectional else 1
         linear_in = dirs * config.hidden_size

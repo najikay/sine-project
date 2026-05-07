@@ -46,6 +46,7 @@ class RNNConfig:
     hidden_size: int = 64
     num_layers: int = 2
     bidirectional: bool = False
+    nonlinearity: str = "relu"
 
 
 @dataclass
@@ -55,6 +56,7 @@ class LSTMConfig:
     hidden_size: int = 64
     num_layers: int = 2
     bidirectional: bool = False
+    dropout: float = 0.2
 
 
 @dataclass

@@ -22,18 +22,20 @@ data:
 model:
   mlp:
     hidden_sizes:
-    - 1024
-    - 512
-    - 256
-    activation: leaky_relu
+    - 64
+    - 128
+    - 64
+    activation: relu
   rnn:
-    hidden_size: 256
+    hidden_size: 64
     num_layers: 2
     bidirectional: true
+    nonlinearity: relu
   lstm:
-    hidden_size: 128
+    hidden_size: 64
     num_layers: 2
     bidirectional: true
+    dropout: 0.2
 training:
   learning_rate: 0.001
   epochs: 50
