@@ -1,6 +1,6 @@
 # Sine Wave Extraction — Assignment 01
 
-> **Course:** AI Orchestration · SemB 2026 · **Group ID:** `amj-naji`
+> **Course:** AI Orchestration · SemB 2026 · **Group ID:** `NajAmjad`
 
 Extract a target sine wave from a noisy mixture of multiple sine waves using three neural network architectures: MLP, RNN, and LSTM.
 
