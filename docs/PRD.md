@@ -1,6 +1,6 @@
 # Product Requirements Document (PRD)
 ## Project: Sine Wave Extraction System
-### Version: 1.0.0 | Author: najikay | Date: 2026-05-06
+### Version: 1.0.0 | Author: NajAmjad | Date: 2026-05-06
 
 ---
 
