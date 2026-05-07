@@ -1,0 +1,48 @@
+seed: 42
+signal:
+  frequencies:
+  - 1
+  - 5
+  - 10
+  - 20
+  sample_rate: 200
+  window_size: 10
+  target_frequency: 10
+  amplitude: 1.0
+  amplitude_jitter_std: 0.05
+  phase_jitter_std: 0.1
+  noise_std: 0.05
+data:
+  num_windows: 10000
+  train_ratio: 0.7
+  val_ratio: 0.15
+  test_ratio: 0.15
+  batch_size: 64
+  shuffle: true
+model:
+  mlp:
+    hidden_sizes:
+    - 1024
+    - 512
+    - 256
+    activation: leaky_relu
+  rnn:
+    hidden_size: 256
+    num_layers: 2
+    bidirectional: true
+  lstm:
+    hidden_size: 128
+    num_layers: 2
+    bidirectional: true
+training:
+  learning_rate: 0.001
+  epochs: 50
+  early_stopping_patience: 15
+  use_scheduler: true
+  grad_clip_max_norm: 1.0
+  checkpoint_dir: artifacts/checkpoints
+  results_dir: artifacts/results
+visualization:
+  plots_dir: artifacts/plots
+  interactive: false
+  num_samples_to_plot: 3

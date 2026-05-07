@@ -1,0 +1,25 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# Secrets
+.env
+
+# Generated artifacts (keep .gitkeep placeholders)
+artifacts/data/*
+artifacts/checkpoints/*
+artifacts/results/*
+artifacts/plots/*
+artifacts/sweep/*
+!artifacts/**/.gitkeep
+
+# Test coverage
+.coverage
+htmlcov/
